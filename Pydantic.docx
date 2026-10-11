@@ -1,0 +1,22 @@
+In Pydantic , whichever fields we add , those are by default required fields.
+If we skip any field during obj creation , then it wont happen.
+
+to make a field optional , we will have to import typing model
+
+EmailStr - validates email input
+AnyUrl - validates AnyUrl
+
+Field Validator helps us in enforcing custom validations on our fields like for example , to check whether an HDFC bank
+employee is there or not , we will check his/her email , if it contains @gmail or any other domain , then its not
+
+To do this , we will have to make a new method inside our class , use decorator 
+
+Field Validator operates in 2 modes , before and after 
+default - after
+after means that the value which we are getting that are after type coercion and vice versa
+
+suppose we are sending 'age':'20' , with before mode , it will give error as type coercion hasnt happend 
+
+Model validatior operates on entire model
+
+computed fields are the one which user doesnt provide explicity , based on the values provided , we calculate the field
